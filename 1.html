@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowing Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #1a1a1a;
+      font-family: Arial, sans-serif;
+    }
+    .button {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: white;
+      padding: 15px 40px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 5px 15px rgba(255, 138, 0, 0.5);
+    }
+    .button:hover {
+      box-shadow: 0 5px 20px rgba(229, 46, 113, 0.7), 0 0 50px rgba(255, 138, 0, 0.5);
+      transform: scale(1.1);
+    }
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: skewX(-45deg);
+      transition: 0.5s;
+    }
+    .button:hover::before {
+      left: 150%;
+    }
+  </style>
+</head>
+<body>
+  <button class="button">Click Me</button>
+</body>
+</html>
